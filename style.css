@@ -3,12 +3,18 @@
     src: url(/fonts/CodersCrux2Regular-grnR.ttf);
     
 }
+@font-face {
+    font-family:owswald ;
+    src: url(/fonts/Oswald-VariableFont_wght.ttf);
+    
+}
 
 /* ============================================================================= */
 
 * {
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 
 body, html {
@@ -16,7 +22,8 @@ body, html {
     background-color: #1f1f1f;
 }
 
-/* NavBar */
+
+/* Navbar CSS */
 .navbar {
     display: flex;
     justify-content: center;
@@ -25,7 +32,21 @@ body, html {
     width: 100%; 
     z-index: 3; 
     margin-top: 40px;
+    background-color: transparent; /* Initial background color */
+    transition: background-color 1.0s; /* Smooth transition for background color */
 }
+
+.navbar.scrolled {
+    background-color: rgba(0, 0, 0, 0.8); /* Background color after scrolling */
+    padding-top: 40px;
+    padding-bottom: 50px;
+    margin-top: 0;
+}
+
+/* Add other CSS styles as needed */
+
+
+
 
 .navbar a {
     font-size: x-large;
@@ -40,7 +61,7 @@ body, html {
 
 /* Hero Image */
 .hero-image {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("img/Untitled-1.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("img/hero.jpg");
     height: 100vh; /* Full viewport height */
     background-position: center;
     background-repeat: no-repeat;
@@ -65,4 +86,65 @@ body, html {
     font-family: Armin;
     color: white;
 
+}
+.container {
+    display: flexbox; /* Creates a flex container */
+    align-items: center; /* Vertically centers items within the container */
+    padding: 100px; /* Optional: adds some padding around the container */
+
+}
+
+#ArminPic img {
+    border-radius: 50px;
+    width: 35%;
+    float: left;
+    margin-right: 20px;
+   
+}
+
+#About-me {
+    color: white;
+    text-align: left;
+    margin-left: 10px;
+    margin-top: 45px;
+    font-size: large;
+    font-family: owswald;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    text-indent: 20px;
+
+}
+
+
+.swiper {
+    padding: 40px;
+    width: 600px;
+    height: 300px;
+}
+
+
+#js_pic{
+    padding-top: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#DNS_pic{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+#basic_brutforce{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#textunderproject{
+    color: white; 
+    text-align: center;
+    font-size: x-large;
+    font-family:owswald ;
 }

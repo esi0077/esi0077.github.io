@@ -1,34 +1,73 @@
 <!doctype html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css"
-        rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
     <link rel="icon" type="image/x-icon" href="logo.ico">
     <title>Armin Esmaili</title>
 </head>
-
 <body>
     <section class="navbar">
-        <a class="active" href="">Home</a>
-        <a href="">About-me</a>
-        <a href="">Projects</a>
+        <a href="#hero-image">Home</a>
+        <a href="#scroll_about">About-me</a>
+        <a href="#textunderproject">Projects</a>
         <a href="">Social</a>
     </section>
 
-    <div class="hero-image">
+    <div class="hero-image" id="hero-image">
         <p id="ArminType"></p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div id="scroll_about"></div>
     </div>
-    
 
+    <section class="About-me-count">
+        <div class="container">
+            <div id="ArminPic">
+                <img src="/img/20240530_130106.jpg" alt="Armin Pic" id="ArminPic">
+            </div>
+            <div id="About-me">
+                <p>My name is Armin, and I'm 21 years old. I was born in Iran and completed 13 years of schooling, but my journey in education didn't stop there. I'd like to share a bit about my story with you.
+                    I have explored various career paths, but my true passion and dream job have always been related to something that made me feel good, which, in my case, is video editing—a blend of sound and video. However, this wasn't the end of my journey. I ventured into acquiring new skills and found great joy in the process of learning.
+                    I began my journey in video editing when I was 17 years old. It wasn't easy at first, but now I realize that I have developed the skills to make editing more manageable. I believe that everyone can continue to improve, and that's why I've chosen to invest more time into practicing my dream job. I know there's always room for growth.
+                    In addition to my video editing passion, I decided to learn a new skill—coding and information technology (I.T.). I believe that in this technology-driven age, I can contribute by helping people enhance their experiences and productivity with the tools they love.
+                    When I contemplate my future career, the idea of working for the betterment of others comes to mind, which is why I've chosen to pursue a career as a coder. Providing comfort and assistance to people is the most rewarding thing one can do. After I finish my schooling, I am determined to work hard and further improve my skills so I can assist people to the best of my ability.
+                    I understand that beginnings can be challenging, but I am confident that with dedication and hard work, everything will eventually fall into place.</p>
+            </div>
+        </div>
+    </section>
 
+    <hr>
 
+    <section>
+        <h1 id="textunderproject">Projects</h1>
+        <swiper-container>
+            <swiper-slide><a href="https://github.com/esi0077/Js_obfuscator"><img src="/img/js.jpg" alt="Js encoder" id="js_pic"></a></swiper-slide>
+            <swiper-slide><a href="https://github.com/esi0077/DNS_Set"><img src="/img/dns_set.png" alt="Dns set" id="DNS_pic"></a></swiper-slide>
+            <swiper-slide><a href="https://github.com/esi0077/python_basic_brute_force"><img src="/img/basic_brutforce.png" alt="basic brutforce" id="basic_brutforce"></a></swiper-slide>
+        </swiper-container>
+        <p id="textunderproject">swipe to view more</p>
+    </section>
 
-    <script src="script.js"></script>
+    <br>
+    <hr>
+
+    <script src="script.js"></script> <!-- Link to your JavaScript file -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 </body>
-
 </html>
