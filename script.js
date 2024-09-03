@@ -1,46 +1,33 @@
-
-
-
-var i = 0;
-var txt = 'Armin Esmaili'; /* The text */
-var speed = 200; /* The speed/duration of the effect in milliseconds */
-
-function typeWriter() {
-    if (i < txt.length) {
-        document.getElementById("ArminType").innerHTML += txt.charAt(i);
-        i++;
-        setTimeout(typeWriter, speed);
-    } else {
-        // Wait for a while before starting the removal
-        setTimeout(typeremover, 1000);
-    }
-}
-
-function typeremover() {
-    if (i > 0) {
-        document.getElementById("ArminType").innerHTML = txt.substring(0, i - 1);
-        i--;
-        setTimeout(typeremover, speed);
-    } else {
-        // Wait for a while before starting the typing again
-        setTimeout(typeWriter, 1000);
-    }
-}
-
-// Start the loop when the window loads
-window.onload = function() {
-    typeWriter();
-};
-
-
-
-
-
-
-
- // script.js
-
 document.addEventListener('DOMContentLoaded', function() {
+    // Typewriter effect initialization
+    var i = 0;
+    var txt = 'Armin Esmaili'; /* The text */
+    var speed = 200; /* The speed/duration of the effect in milliseconds */
+
+    function typeWriter() {
+        if (i < txt.length) {
+            document.getElementById("ArminType").innerHTML += txt.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+        } else {
+            setTimeout(typeremover, 1000);
+        }
+    }
+
+    function typeremover() {
+        if (i > 0) {
+            document.getElementById("ArminType").innerHTML = txt.substring(0, i - 1);
+            i--;
+            setTimeout(typeremover, speed);
+        } else {
+            setTimeout(typeWriter, 1000);
+        }
+    }
+
+    // Start the typewriter effect
+    typeWriter();
+
+    // Navbar scroll effect
     var navbar = document.querySelector('.navbar');
 
     function handleScroll() {
@@ -51,9 +38,25 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Initial check in case the page is already scrolled
+    // Initial check and scroll event listener
     handleScroll();
-
-    // Add event listener for scroll
     window.addEventListener('scroll', handleScroll);
+
+    // Image visibility on scroll
+    function handleImageVisibility() {
+        var image = document.getElementById('ArminPicture');
+        var imagePosition = image.getBoundingClientRect().top;
+        var screenPosition = window.innerHeight;
+
+        if (imagePosition < screenPosition) {
+            image.classList.add('visible');
+        }
+    }
+
+    // Check image visibility on scroll and on page load
+    window.addEventListener('scroll', handleImageVisibility);
+    handleImageVisibility();
+
+    // Initialize AOS (Animate on Scroll)
+    AOS.init();
 });

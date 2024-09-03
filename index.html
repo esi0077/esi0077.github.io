@@ -3,9 +3,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
     <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
     <link rel="icon" type="image/x-icon" href="logo.ico">
     <title>Armin Esmaili</title>
@@ -14,8 +20,8 @@
     <section class="navbar">
         <a href="#hero-image">Home</a>
         <a href="#scroll_about">About-me</a>
-        <a href="#textunderproject">Projects</a>
-        <a href="">Social</a>
+        <a href="#mySwiper">Projects</a>
+        <a href="#Social">Social</a>
     </section>
 
     <div class="hero-image" id="hero-image">
@@ -36,10 +42,11 @@
         <div id="scroll_about"></div>
     </div>
 
-    <section class="About-me-count">
+     <!-- About Me Section with AOS Animation -->
+     <section class="About-me-count">
         <div class="container">
-            <div id="ArminPic">
-                <img src="/img/20240530_130106.jpg" alt="Armin Pic" id="ArminPic">
+            <div id="ArminPic" data-aos="fade-right" data-aos-duration="200000">
+                <img src="/img/20240530_130106.jpg" alt="Armin Pic" id="ArminPicture">
             </div>
             <div id="About-me">
                 <p>My name is Armin, and I'm 21 years old. I was born in Iran and completed 13 years of schooling, but my journey in education didn't stop there. I'd like to share a bit about my story with you.
@@ -55,19 +62,28 @@
     <hr>
 
     <section>
-        <h1 id="textunderproject">Projects</h1>
-        <swiper-container>
+        <swiper-container class="mySwiper" navigation="true" id="mySwiper">
             <swiper-slide><a href="https://github.com/esi0077/Js_obfuscator"><img src="/img/js.jpg" alt="Js encoder" id="js_pic"></a></swiper-slide>
             <swiper-slide><a href="https://github.com/esi0077/DNS_Set"><img src="/img/dns_set.png" alt="Dns set" id="DNS_pic"></a></swiper-slide>
             <swiper-slide><a href="https://github.com/esi0077/python_basic_brute_force"><img src="/img/basic_brutforce.png" alt="basic brutforce" id="basic_brutforce"></a></swiper-slide>
-        </swiper-container>
-        <p id="textunderproject">swipe to view more</p>
+          
+          </swiper-container>
+        
+        
     </section>
 
-    <br>
-    <hr>
+    <section id="Social">
+    <a href="mailto:armines765@gmail.com" class="fa fa-google"></a>
+    <a href="https://www.linkedin.com/in/armin-esmaili-4744b32b7/" class="fa fa-linkedin"></a>
+    <a href="https://www.instagram.com/armines03/" class="fa fa-instagram"></a>
+    <a href="https://github.com/esi0077" class="fa fa-github"></a>
+    </section>
+
 
     <script src="script.js"></script> <!-- Link to your JavaScript file -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </body>
 </html>
