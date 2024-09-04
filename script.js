@@ -60,3 +60,20 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize AOS (Animate on Scroll)
     AOS.init();
 });
+document.getElementById('hamburger-menu').onclick = function() {
+    var mobileNav = document.getElementById('mobile-nav');
+    if (mobileNav.classList.contains('active')) {
+        mobileNav.classList.remove('active');
+    } else {
+        mobileNav.classList.add('active');
+    }
+};
+
+// Close the mobile nav when a link is clicked
+document.querySelectorAll('.mobile-nav a').forEach(function(link) {
+    link.onclick = function() {
+        var mobileNav = document.getElementById('mobile-nav');
+        mobileNav.classList.remove('active');
+    };
+});
+
