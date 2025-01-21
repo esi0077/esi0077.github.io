@@ -1,167 +1,177 @@
-@font-face {
-    font-family:Armin ;
-    src: url(/fonts/CodersCrux2Regular-grnR.ttf);
-    
-}
-@font-face {
-    font-family:owswald ;
-    src: url(/fonts/Oswald-VariableFont_wght.ttf);
-    
-}
-
-
-/* ============================================================================= */
-
-/* Universal Styles */
+/* General Reset */
 * {
   margin: 0;
   padding: 0;
-  scroll-behavior: smooth;
-  transition: all 0.6s;
+  box-sizing: border-box;
 }
 
-body, html {
-  height: 100%;
-  background-color: #1f1f1f;
+body {
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
 }
 
-/* Navbar */
-.navbar {
+/* Navbar styling */
+#navbar {
   display: flex;
-  justify-content: center;
-  gap: 30px;
-  position: fixed; 
-  width: 100%; 
-  z-index: 3; 
-  margin-top: 40px;
-  background-color: transparent; /* Initial background color */
-  transition: background-color 1.0s; /* Smooth transition for background color */
+  align-items: center; /* Align items vertically */
+  justify-content: space-between; /* Space between logo and links */
+  width: 100%; /* Full width of the viewport */
+  position: fixed; /* Fixes navbar at the top */
+  top: 0; /* Sticks it to the top */
+  z-index: 1000; /* Ensures it stays above other content */
+  padding: 10px 20px; /* Adds spacing around the navbar */
 }
 
-.navbar.scrolled {
-  background-color: rgba(0, 0, 0, 0.8); /* Background color after scrolling */
-  padding-top: 40px;
-  padding-bottom: 50px;
-  margin-top: 0;
+#navbar img {
+  width: 50px; /* Adjust logo size */
+  height: auto;
+  margin: 0;
+  transition: all 0.3s ease;
+}
+#navbar img:hover {
+  transform: matrix(1.1, 0, 0, 1.1, 0, 0); /* Scales the logo on hover */
+  transition: all 0.3s ease;
 }
 
-.navbar a {
-  font-size: x-large;
-  color: white;
+#navbar ul {
+  display: flex;
+  align-items: center;
+  gap: 30px; /* Space between navigation links */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#navbar a {
   text-decoration: none;
-  font-family: Armin;
+  color: white; /* White text for links */
+  font-weight: bold;
+  font-size: 1rem; /* Adjust font size */
+  transition: color 0.3s ease; /* Smooth color change on hover */
 }
 
-.active {
-  border-bottom: #ffffff solid;
+#navbar a:hover {
+  color: #001aff; /* Golden color on hover */
 }
 
-/* Hero Image */
-.hero-image {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("img/hero.jpg");
+/* Section 1 styling */
+#section1 {
   height: 100vh; /* Full viewport height */
-  background-position: center;
-  background-repeat: no-repeat;
+  background-image: url('img/background\ 1.png'); /* Background for section 1 */
   background-size: cover;
-  position: relative;
-  z-index: 1;
-}
-
-.hero-text {
+  background-position: center;
+  padding-top: 70px; /* Prevent content overlap with navbar */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white; /* White text for content */
   text-align: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  z-index: 2; /* Ensure the text is above the hero image */
 }
 
-#ArminType {
+#section1 h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+#section1 p {
+  font-size: 1.2rem;
+}
+
+#btn-section1, #btn-section1 a {
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  padding: 15px;
+  border-radius: 10px;
+  border-color: beige;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: large;;
+}
+#btn-section1{
+  margin-right: 80%;
+}
+
+#btn-section1:hover , #btn-section1 a:hover{
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  transition: all 0.3s ease;
+}
+
+/* Section 2 styling */
+#section2 {
+  height: 100vh; /* Full viewport height */
+  background-image: url('img/back2.png'); /* Background for section 2 */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  padding-top: 23%;
-  font-size: 200px;
-  font-family: Armin;
-  color: white;
+  color: black; /* Black text for contrast */
+  gap: 10%;
 }
 
-.container {
-  display: flexbox; /* Creates a flex container */
-  align-items: center; /* Vertically centers items within the container */
-  padding: 100px; /* Optional: adds some padding around the container */
+#section2 h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
 }
 
-#ArminPic img {
-  border-radius: 50px;
-  width: 35%;
-  float: left;
-  margin-right: 20px;
+#section2 p {
+  font-size: 1.2rem;
 }
 
-#ArminPicture {
-  animation: backInLeft 2s;
+/* Optional Global Styling for Links */
+a {
+  transition: color 0.3s ease; /* Smooth color transition on hover */
 }
 
-#ArminPicture.visible {
-  animation: backInLeft 2s;
+a:hover {
+  color: #00aaff; /* Light blue on hover (optional) */
 }
 
-#About-me {
-  color: white;
-  text-align: left;
-  margin-left: 10px;
-  margin-top: 45px;
-  font-size: large;
-  font-family: owswald;
-  letter-spacing: 1px;
-  line-height: 1.5;
-  text-indent: 20px;
+
+#about{
+  background-color: rgb(27, 27, 27);
+  color: rgb(255, 255, 255);
+  padding: 20px;
+  width: 20%;
+  height: 50%;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px 0px white;
+}
+
+#section3 {
+  height: 100vh; /* Full viewport height */
+  background-image: url('img/back2.png'); /* Background for section 2 */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: rgb(255, 255, 255); /* Black text for contrast */
+  gap: 10%;
+}
+
+#section3 h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+#section3 p {
+  font-size: 1.2rem;
 }
 
 .swiper {
-  padding: 40px;
-  width: 600px;
-  height: 300px;
-}
-
-#js_pic {
-  padding-top: 50px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
-
-#DNS_pic {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 40%;
-}
-
-#basic_brutforce {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
-
-#textunderproject {
-  color: white; 
-  text-align: center;
-  font-size: x-large;
-  font-family: owswald;
-}
-
-.swiper {
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 80%;
 }
 
 .swiper-slide {
   text-align: center;
   font-size: 18px;
-  background: #fff;
+  background-image: url('img/back2.png'); /* Background for section 2 */  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -171,330 +181,6 @@ body, html {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-}
-
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #575757;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #636363;
-}
-
-/* Social Media Icons */
-.fa {
-  padding: 20px;
-  font-size: 30px;
-  width: 50px;
-  text-align: center;
-  text-decoration: none;
-  margin: 5px 2px;
-}
-
-.fa:hover {
-  opacity: 0.7;
-}
-
-.fa-github { background: #3B5998; color: white; }
-.fa-twitter { background: #55ACEE; color: white; }
-.fa-google { background: #dd4b39; color: white; }
-.fa-linkedin { background: #007bb5; color: white; }
-.fa-youtube { background: #bb0000; color: white; }
-.fa-instagram { background: #125688; color: white; }
-.fa-pinterest { background: #cb2027; color: white; }
-.fa-snapchat-ghost {
-  background: #fffc00;
-  color: white;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-}
-.fa-skype { background: #00aff0; color: white; }
-.fa-android { background: #a4c639; color: white; }
-.fa-dribbble { background: #ea4c89; color: white; }
-.fa-vimeo { background: #45bbff; color: white; }
-.fa-tumblr { background: #2c4762; color: white; }
-.fa-vine { background: #00b489; color: white; }
-.fa-foursquare { background: #45bbff; color: white; }
-.fa-stumbleupon { background: #eb4924; color: white; }
-.fa-flickr { background: #f40083; color: white; }
-.fa-yahoo { background: #430297; color: white; }
-.fa-soundcloud { background: #ff5500; color: white; }
-.fa-reddit { background: #ff5700; color: white; }
-.fa-rss { background: #ff6600; color: white; }
-
-#Social {
-  margin-left: 39%;
-  width: 50%;
-  padding: 10px;
-}
-
-/* Mobile Navbar */
-.hamburger-menu {
-  display: none;
-  cursor: pointer;
-}
-
-.mobile-nav {
-  display: none;
-  flex-direction: column;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.9);
-  z-index: 100;
-  padding-top: 60px;
-  text-align: center;
-}
-
-.mobile-nav a {
-  color: white;
-  font-size: large;
-  margin: 20px 0;
-  text-decoration: none;
-  display: block;
-}
-
-@-webkit-keyframes backInLeft {
-  0% {
-      transform: translateX(-2000px) scale(.7);
-      opacity: .7;
-  }
-  80% {
-      transform: translateX(0px) scale(.7);
-      opacity: .7;
-  }
-  100% {
-      transform: scale(1);
-      opacity: 1;
-  }
-}
-
-/* Responsive Styles */
-
-@media screen and (max-width: 1325px) {
-  #ArminType {
-      font-size: 130px;
-      padding-top: 40%;
-  }
-
-  #ArminPic img {
-      width: 30%;
-  }
-
-  #About-me {
-      font-size: large;
-      display: grid;  
-      grid-gap: 5px;  
-      grid-template-columns: repeat(auto-fit, 700px);
-      grid-template-rows: repeat(2, 100px);  
-  }
-
-  .swiper {
-      width: 80%;
-      height: 250px;
-  }
-
-  #Social {
-      margin-left: 30%;
-  }
-
-  .navbar a {
-      font-size: x-large;
-  }
-}
-
-@media screen and (max-width: 1200px) {
-  #ArminType {
-      font-size: 130px;
-      padding-top: 40%;
-  }
-
-  #ArminPic img {
-      width: 40%;
-  }
-
-  #About-me {
-      font-size: 15px;
-      grid-gap: 5px;  
-      grid-template-columns: repeat(auto-fit, 600px);
-      grid-template-rows: repeat(1, 0px); 
-  }
-
-  .swiper {
-      width: 80%;
-      height: 250px;
-  }
-
-  #Social {
-      margin-left: 30%;
-  }
-
-  .navbar a {
-      font-size: x-large;
-  }
-}
-
-@media screen and (max-width: 887px) {
-  #ArminType {
-      font-size: 100px;
-      padding-top: 50%;
-  }
-
-  #ArminPic img {
-      width: 40%;
-      padding-top: 50px;
-      border-radius: 200px;
-  }
+  object-fit: scale-down;
   
-  #About-me {
-      font-size: 12px;
-      grid-gap: 5px;  
-      grid-template-columns: repeat(auto-fit, 430px);
-      grid-template-rows: repeat(1, 200px); 
-    
-  }
-
-  .swiper {
-      width: 80%;
-      height: 250px;
-  }
-
-  #Social {
-      margin-left: 30%;
-  }
-
-  .navbar a {
-      font-size: x-large;
-  }
-  .container {
-    display: flexbox; /* Creates a flex container */
-    align-items: center; /* Vertically centers items within the container */
-    padding: 30px; /* Optional: adds some padding around the container */
-  }
-}
-
-@media screen and (max-width: 768px) {
-  /* Navbar */
-  .navbar {
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-  }
-
-  .navbar a {
-      display: none;
-  }
-
-  .hamburger-menu {
-      display: block;
-  }
-
-  .mobile-nav.active {
-      display: flex;
-  }
-
-  #ArminType {
-      font-size: 50px;
-      padding-top: 60%;
-  }
-
-  #ArminPic img {
-      width: 30%;
-      margin: 20px auto;
-      display: block;
-  }
-
-  #About-me {
-      margin-top: 10px;
-      font-size: 10px;
-      padding-top: 70px;
-      padding-left: 10px;
-      text-align: justify;
-      grid-gap: 3px;  
-      grid-template-columns: repeat(auto-fit, 500px);
-      grid-template-rows: repeat(1, 200px); 
-  }
-
-  .swiper {
-      width: 100%;
-      height: 250px;
-      margin-top: 20px;
-  }
-
-  #Social {
-    
-      margin-left: 26%;
-     
-  }
-  .container {
-    padding: 1%; /* Optional: adds some padding around the container */
-  }
-  .fa {
-    padding: 10px;
-    font-size: 30px;
-    width: 50px;
-    text-align: center;
-    text-decoration: none;
-    margin: 5px 2px;
-  }
-
-}
-
-@media screen and (max-width: 480px) {
-  #ArminType {
-      font-size: 30px;
-      padding-top: 60%;
-  }
-
-  #ArminPic img {
-      width: 80%;
-      margin: 0 auto;
-      display: block;
-  }
-
-  #About-me {
-      font-size: small;
-      padding: 10px;
-      text-align: justify;
-      display: grid;  
-    grid-gap: 5px;  
-    grid-template-columns: repeat(auto-fit, 100px);
-    grid-template-rows: repeat(2, 100px);  
-  }
-
-  .swiper {
-      width: 100%;
-      height: 200px;
-  }
-
-  #Social {
-      margin-left: 0;
-      text-align: center;
-  }
-
-  /* Navbar */
-  .navbar {
-      flex-direction: column;
-      align-items: center;
-      gap: 15px;
-      background-color: rgba(0, 0, 0, 0.9);
-      padding: 10px 0;
-  }
-
-  .navbar a {
-      font-size: medium;
-      padding: 5px 10px;
-  }
 }
