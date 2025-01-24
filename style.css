@@ -13,30 +13,31 @@ body {
 /* Navbar styling */
 #navbar {
   display: flex;
-  align-items: center; /* Align items vertically */
-  justify-content: space-between; /* Space between logo and links */
-  width: 100%; /* Full width of the viewport */
-  position: fixed; /* Fixes navbar at the top */
-  top: 0; /* Sticks it to the top */
-  z-index: 1000; /* Ensures it stays above other content */
-  padding: 10px 20px; /* Adds spacing around the navbar */
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  padding: 10px 20px;
 }
 
 #navbar img {
-  width: 50px; /* Adjust logo size */
+  width: 50px;
   height: auto;
   margin: 0;
   transition: all 0.3s ease;
 }
+
 #navbar img:hover {
-  transform: matrix(1.1, 0, 0, 1.1, 0, 0); /* Scales the logo on hover */
+  transform: scale(1.1);
   transition: all 0.3s ease;
 }
 
 #navbar ul {
   display: flex;
   align-items: center;
-  gap: 30px; /* Space between navigation links */
+  gap: 2rem;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -44,28 +45,28 @@ body {
 
 #navbar a {
   text-decoration: none;
-  color: white; /* White text for links */
+  color: white;
   font-weight: bold;
-  font-size: 1rem; /* Adjust font size */
-  transition: color 0.3s ease; /* Smooth color change on hover */
+  font-size: 1rem;
+  transition: color 0.3s ease;
 }
 
 #navbar a:hover {
-  color: #001aff; /* Golden color on hover */
+  color: #001aff;
 }
 
 /* Section 1 styling */
 #section1 {
-  height: 100vh; /* Full viewport height */
-  background-image: url('img/background\ 1.png'); /* Background for section 1 */
+  height: 100vh;
+  background-image: url('img/background\ 1.png');
   background-size: cover;
   background-position: center;
-  padding-top: 70px; /* Prevent content overlap with navbar */
+  padding-top: 70px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: white; /* White text for content */
+  color: white;
   text-align: center;
 }
 
@@ -86,13 +87,14 @@ body {
   border-color: beige;
   text-decoration: none;
   font-weight: bold;
-  font-size: large;;
+  font-size: large;
 }
-#btn-section1{
+
+#btn-section1 {
   margin-right: 80%;
 }
 
-#btn-section1:hover , #btn-section1 a:hover{
+#btn-section1:hover, #btn-section1 a:hover {
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
   transition: all 0.3s ease;
@@ -100,15 +102,15 @@ body {
 
 /* Section 2 styling */
 #section2 {
-  height: 100vh; /* Full viewport height */
-  background-image: url('img/back2.png'); /* Background for section 2 */
+  height: 100vh;
+  background-image: url('img/back2.png');
   background-size: cover;
   background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: black; /* Black text for contrast */
+  color: black;
   gap: 10%;
 }
 
@@ -123,15 +125,14 @@ body {
 
 /* Optional Global Styling for Links */
 a {
-  transition: color 0.3s ease; /* Smooth color transition on hover */
+  transition: color 0.3s ease;
 }
 
 a:hover {
-  color: #00aaff; /* Light blue on hover (optional) */
+  color: #00aaff;
 }
 
-
-#about{
+#about {
   background-color: rgb(27, 27, 27);
   color: rgb(255, 255, 255);
   padding: 20px;
@@ -142,15 +143,15 @@ a:hover {
 }
 
 #section3 {
-  height: 100vh; /* Full viewport height */
-  background-image: url('img/back2.png'); /* Background for section 2 */
+  height: 100vh;
+  background-image: url('img/back2.png');
   background-size: cover;
   background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: rgb(255, 255, 255); /* Black text for contrast */
+  color: rgb(255, 255, 255);
   gap: 10%;
 }
 
@@ -171,7 +172,7 @@ a:hover {
 .swiper-slide {
   text-align: center;
   font-size: 18px;
-  background-image: url('img/back2.png'); /* Background for section 2 */  
+  background-image: url('img/back2.png');
   display: flex;
   justify-content: center;
   align-items: center;
@@ -182,5 +183,70 @@ a:hover {
   width: 100%;
   height: 100%;
   object-fit: scale-down;
-  
+}
+
+/* Responsive styling */
+@media (max-width: 1024px) {
+  #navbar ul {
+    gap: 1.5rem;
+  }
+
+  #section1 h1, #section2 h1, #section3 h1 {
+    font-size: 2.5rem;
+  }
+
+  #section1 p, #section2 p, #section3 p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #navbar ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  #section1 h1, #section2 h1, #section3 h1 {
+    font-size: 2rem;
+  }
+
+  #section1 p, #section2 p, #section3 p {
+    font-size: 1rem;
+  }
+
+  .swiper {
+    width: 100%;
+    height: 60%;
+  }
+
+  .swiper-slide {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  #navbar {
+    padding: 10px;
+  }
+
+  #section1 h1, #section2 h1, #section3 h1 {
+    font-size: 1.5rem;
+  }
+
+  #section1 p, #section2 p, #section3 p {
+    font-size: 0.9rem;
+  }
+
+  .swiper {
+    height: 50%;
+  }
+
+  .swiper-slide {
+    font-size: 14px;
+  }
 }
