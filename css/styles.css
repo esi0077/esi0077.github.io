@@ -1,15 +1,5 @@
 @charset "UTF-8";
-/*!
-* Start Bootstrap - Personal v1.0.1 (https://startbootstrap.com/template-overviews/personal)
-* Copyright 2013-2023 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-personal/blob/master/LICENSE)
-*/
-/*!
- * Bootstrap  v5.2.3 (https://getbootstrap.com/)
- * Copyright 2011-2022 The Bootstrap Authors
- * Copyright 2011-2022 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- */
+
 :root {
   --bs-blue: #1e30f3;
   --bs-indigo: #6610f2;
@@ -153,6 +143,53 @@ h4, .h4 {
   h4, .h4 {
     font-size: 1.5rem;
   }
+}
+/* Full-screen loading container */
+#loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #000000, hwb(0 0% 100%));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+}
+
+/* Loading spinner */
+.loader {
+  width: 70px;
+  height: 70px;
+  border: 0px solid rgba(255, 255, 255, 0.3);
+  border-top: 8px solid #00ccff;
+  border-radius: 50%;
+  animation: spin 1.5s linear infinite;
+  box-shadow: #003cff 1px 0px 130px 0px;
+}
+
+/* Text below the spinner */
+.loading-text {
+  margin-top: 20px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Keyframes for spinning animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Fade-out effect when page loads */
+.fade-out {
+  opacity: 0;
 }
 
 h5, .h5 {
@@ -444,14 +481,7 @@ legend + * {
   -webkit-appearance: textfield;
 }
 
-/* rtl:raw:
-[type="tel"],
-[type="url"],
-[type="email"],
-[type="number"] {
-  direction: ltr;
-}
-*/
+
 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
@@ -11632,6 +11662,7 @@ html {
   fill: #1e30f3;
 }
 
+
 @media (min-width: 576px) {
   .profile {
     height: 60vw;
@@ -11656,6 +11687,7 @@ html {
     width: 3vw;
     left: -4vw;
   }
+  
 }
 @media (min-width: 768px) {
   .profile {
@@ -11731,4 +11763,5 @@ html {
     width: 1.5vw;
     left: -2vw;
   }
+  
 }
